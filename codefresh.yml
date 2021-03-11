@@ -24,14 +24,14 @@ steps:
   #   dockerfile: "Dockerfile"
   #   stage: "build"
 
-  build:
-    title: "Building container image"
-    type: "build"
-    arguments:
-      working_directory: "${{clone}}"
-      image_name: "lucerozuazquita/basic-app"
-      tags:
-      - ${{CF_SHORT_REVISION}}
-      registry: docker-hub
-      dockerfile: "Dockerfile"
-    stage: build    
+  # build:
+  #   title: "Building container image"
+  #   type: "build"
+  #   arguments:
+  #     working_directory: "${{clone}}"
+  #     image_name: "lucerozuazquita/basic-app"
+  #     tags:
+  #     - ${{CF_SHORT_REVISION}}
+  #     registry: docker-hub
+  #     dockerfile: "Dockerfile"
+  #   stage: build    
