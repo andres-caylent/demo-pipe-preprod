@@ -40,7 +40,8 @@ steps:
   blah:
   title: Running docker image
   type: freestyle
-  working_directory: '${{CLONE_STEP_NAME}}'
+  #working_directory: ''
+  working_directory: "${{clone}}"
   arguments:
     image: 'alpine:3.8'
     commands:
