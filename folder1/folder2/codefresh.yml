@@ -38,13 +38,13 @@ steps:
   #   stage: build    
 
   blah:
-  title: Running docker image
-  type: freestyle
-  #working_directory: ''
-  working_directory: "${{clone}}"
-  arguments:
-    image: 'alpine:3.8'
-    commands:
-      - echo "blah"
-      - echo "This is the pipeline in folder1/folder2"
-  stage: text        
+    title: Running docker image
+    type: freestyle
+    #working_directory: ''
+    working_directory: "${{clone}}"
+    arguments:
+      image: 'alpine:3.8'
+      commands:
+        - echo "blah"
+        - echo "This is the pipeline in folder1/folder2"
+    stage: text        
