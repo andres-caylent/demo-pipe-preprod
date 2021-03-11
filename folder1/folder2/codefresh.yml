@@ -3,6 +3,7 @@ version: "1.0"
 stages:
   - "clone"
   - "build"
+  - "text"
 
 steps:
   clone:
@@ -24,14 +25,25 @@ steps:
   #   dockerfile: "Dockerfile"
   #   stage: "build"
 
-  build:
-    title: "Building container image"
-    type: "build"
-    arguments:
-      working_directory: "${{clone}}"
-      image_name: "lucerozuazquita/basic-app"
-      tags:
-      - ${{CF_SHORT_REVISION}}
-      registry: docker-hub
-      dockerfile: "Dockerfile"
-    stage: build    
+  # build:
+  #   title: "Building container image"
+  #   type: "build"
+  #   arguments:
+  #     working_directory: "${{clone}}"
+  #     image_name: "lucerozuazquita/basic-app"
+  #     tags:
+  #     - ${{CF_SHORT_REVISION}}
+  #     registry: docker-hub
+  #     dockerfile: "Dockerfile"
+  #   stage: build    
+
+  blah:
+  title: Running docker image
+  type: freestyle
+  working_directory: '${{CLONE_STEP_NAME}}'
+  arguments:
+    image: 'alpine:3.8'
+    commands:
+      - echo "Hello world"
+      - echo "This is the pipeline in folder1/folder2"
+  stage: text        
