@@ -44,6 +44,6 @@ steps:
   arguments:
     image: 'alpine:3.8'
     commands:
-      - echo "Hello world"
+      - echo "blah"
       - echo "This is the pipeline in folder1/folder2"
   stage: text        
